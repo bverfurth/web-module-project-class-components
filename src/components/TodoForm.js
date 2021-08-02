@@ -4,11 +4,11 @@ class TodoForm extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <form onSubmit={console.log("test")}>
+      <form onSubmit={this.props.handleSubmit}>
         <input
           type="text"
           onChange={this.props.handleChange}
-          value={console.log("test2")}
+          value={this.props.addItem}
           placeholder="New Item"
         />
         <button>Add Task</button>

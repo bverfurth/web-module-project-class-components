@@ -23,8 +23,9 @@ export default class App extends Component {
   // onChange handler
 
   handleChange = (e) => {
+    e.preventDefault();
     this.setState({
-      toDoList: e.target.value,
+      todo: e.target.value,
     });
     console.log(e.target.value);
   };
