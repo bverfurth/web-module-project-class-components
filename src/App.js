@@ -37,6 +37,21 @@ export default class App extends Component {
     });
   };
 
+  //Toggle for completed task
+  toggleCompleted = (taskId) => {
+    this.setState({
+      toDoList: this.state.toDoList.map((task) => {
+        if (task.id === taskId) {
+          return {
+            ...task,
+            completed: !taskId.completed,
+          };
+        }
+        return task;
+      }),
+    });
+  };
+
   render() {
     return (
       <div>
