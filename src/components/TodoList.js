@@ -6,7 +6,7 @@ import Todo from "./Todo";
 class TodoList extends React.Component {
   render() {
     return (
-      <div className="toDoList">
+      <div>
         {this.props.toDoList.map((todo) => (
           <Todo
             todo={todo}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import { v4 as uuidv4 } from "uuid";
+import "./components/Todo.css";
 
 const toDoList = [];
 
@@ -52,7 +53,7 @@ export default class App extends Component {
         if (task.id === taskId) {
           return {
             ...task,
-            completed: !taskId.completed,
+            completed: !task.completed,
           };
         }
         return task;
@@ -76,16 +77,17 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
         <h2>Todo List!</h2>
 
-        <TodoForm
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
         <TodoList
           toDoList={this.state.toDoList}
           toggleCompleted={this.toggleCompleted}
+        />
+        <TodoForm
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          deleteCompleted={this.deleteCompleted}
         />
       </div>
     );

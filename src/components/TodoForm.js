@@ -11,8 +11,15 @@ class TodoForm extends React.Component {
           value={this.props.newTask}
           placeholder="New Item"
         />
-        <button>Add Task</button>
-        <button>Remove Completed</button>
+        <button type="submit">Add Task</button>
+        <button
+          type="button"
+          onClick={() => {
+            this.props.deleteCompleted();
+          }}
+        >
+          Remove Completed
+        </button>
       </form>
     );
   }
