@@ -84,7 +84,10 @@ export default class App extends Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <TodoList />
+        <TodoList
+          toDoList={this.state.toDoList}
+          toggleCompleted={this.toggleCompleted}
+        />
       </div>
     );
   }
