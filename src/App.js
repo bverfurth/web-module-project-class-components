@@ -1,8 +1,8 @@
 import { findAllByPlaceholderText } from "@testing-library/dom";
 import React, { Component } from "react";
-import Todo from "./components/Todo";
-import TodoForm from "./components/TodoForm";
-import TodoList from "./components/TodoList";
+// import Todo from "./components/Todo";
+// import TodoForm from "./components/TodoForm";
+// import TodoList from "./components/TodoList";
 import { v4 as uuidv4 } from "uuid";
 
 const toDoList = [];
@@ -49,6 +49,13 @@ export default class App extends Component {
         }
         return task;
       }),
+    });
+  };
+
+  //Deleting Completed Tasks
+  deleteCompleted = () => {
+    this.setState({
+      toDoList: this.state.toDoList.filter((task) => !task.completed),
     });
   };
 
