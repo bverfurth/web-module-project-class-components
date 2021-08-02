@@ -8,7 +8,7 @@ class TodoForm extends React.Component {
         <input
           type="text"
           onChange={this.props.handleChange}
-          value={this.props.addItem}
+          value={this.props.newTask}
           placeholder="New Item"
         />
         <button>Add Task</button>

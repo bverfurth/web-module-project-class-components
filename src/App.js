@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import Todo from "./components/Todo";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import { v4 as uuidv4 } from "uuid";
@@ -28,13 +27,6 @@ export default class App extends Component {
       todo: e.target.value,
     });
     console.log(e.target.value);
-  };
-
-  // Submit Handler
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.addItem(this.state.toDoList);
   };
 
   //Updating State
@@ -73,6 +65,13 @@ export default class App extends Component {
     this.setState({
       toDoList: this.state.toDoList.filter((task) => !task.completed),
     });
+  };
+
+  // Submit Handler
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.addItem(this.state.todo);
   };
 
   render() {
